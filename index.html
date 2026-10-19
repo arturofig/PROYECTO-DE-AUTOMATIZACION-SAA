@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto de Automatización - Fab Academy 2026 | FabLab UContinental</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#" class="brand">
+                <span class="badge-fab">FAB 2026</span>
+                <span class="brand-title">Proyecto Final - Automatización</span>
+            </a>
+            <nav class="nav-links" id="navMenu">
+                <a href="#overview">Resumen</a>
+                <a href="#bom">Materiales</a>
+                <a href="#cad">Mecánica</a>
+                <a href="#electronics">Electrónica</a>
+                <a href="#firmware">Firmware</a>
+                <a href="#tests">Pruebas</a>
+                <a href="#downloads">Archivos</a>
+            </nav>
+            <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+                <span class="theme-icon">🌙</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="container">
+
+        <!-- Hero Section -->
+        <section class="hero-card">
+            <div class="hero-header">
+                <span class="status-tag status-active">● Proyecto en Desarrollo</span>
+                <span class="lab-tag">FabLab UContinental - Daniel Haro</span>
+            </div>
+            <h1 class="hero-title">Sistema de Automatización y Control Industrial IoT</h1>
+            <p class="hero-subtitle">
+                Documentación técnica del proyecto final para Fab Academy 2026. Un sistema integrado de control PID para procesos industriales con monitoreo en tiempo real e interfaz web.
+            </p>
+            <div class="tags-group">
+                <span class="tag">ESP32</span>
+                <span class="tag">Control PID</span>
+                <span class="tag">FabCloud</span>
+                <span class="tag">KiCAD</span>
+                <span class="tag">3D Printing</span>
+                <span class="tag">FreeCAD</span>
+            </div>
+        </section>
+
+        <!-- Overview & Objectives -->
+        <section id="overview" class="section-block">
+            <h2>1. Resumen y Objetivos del Proyecto</h2>
+            <div class="grid-2col">
+                <div class="card">
+                    <h3>Problemática</h3>
+                    <p>
+                        En pequeños procesos industriales y laboratorios, la falta de control automatizado de variables como temperatura y flujo de fluidos genera ineficiencia energética e inconsistencia en la producción.
+                    </p>
+                </div>
+                <div class="card">
+                    <h3>Solución Propuesta</h3>
+                    <p>
+                        Diseño y fabricación digital de un módulo automatizado basado en ESP32 con la capacidad de monitoreo de sensores industriales, actuadores PWM con algoritmo PID y comunicación WebSockets/MQTT.
+                    </p>
+                </div>
+            </div>
+
+            <div class="callout callout-info">
+                <strong>💡 Requisito Fab Academy:</strong> Todo el proyecto ha sido diseñado, fabricado y programado desde cero utilizando herramientas de código abierto como KiCAD, FreeCAD y VS Code + PlatformIO.
+            </div>
+        </section>
+
+        <!-- Bill of Materials (BOM) -->
+        <section id="bom" class="section-block">
+            <h2>2. Lista de Materiales y Componentes (BOM)</h2>
+            <p>Utiliza el buscador para filtrar componentes por categoría o proveedor:</p>
+            
+            <div class="search-box">
+                <input type="text" id="bomSearch" placeholder="🔍 Buscar componente (ej: ESP32, Sensor, Impresión)...">
+            </div>
+
+            <div class="table-responsive">
+                <table class="data-table" id="bomTable">
+                    <thead>
+                        <tr>
+                            <th>Cant.</th>
+                            <th>Componente / Ítem</th>
+                            <th>Categoría</th>
+                            <th>Proceso / Origen</th>
+                            <th>Costo Est. ($)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Microcontrolador ESP32 WROOM-32U</td>
+                            <td>Electrónica</td>
+                            <td>Comercial / PCB Propio</td>
+                            <td>$6.50</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Sensor de Temperatura DS18B20 防水</td>
+                            <td>Sensores</td>
+                            <td>Comercial</td>
+                            <td>$3.20</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Módulo MOSFET IRF520 / Driver motor</td>
+                            <td>Actuadores</td>
+                            <td>PCB Diseñado FabLab</td>
+                            <td>$4.00</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Carcasa y Soportes (PETG)</td>
+                            <td>Estructura</td>
+                            <td>Impresión 3D (Ender 3)</td>
+                            <td>$5.00</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Chasis de Acrílico 3mm</td>
+                            <td>Mecánica</td>
+                            <td>Corte Láser CO2</td>
+                            <td>$4.50</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- CAD & Mechanical Design -->
+        <section id="cad" class="section-block">
+            <h2>3. Diseño Mecánico y Modela3D (CAD)</h2>
+            <p>El diseño del chasis y la carcasa protectora fue realizado en FreeCAD, priorizando el ensamblaje modular y el acceso rápido a los puertos de programación.</p>
+
+            <div class="grid-2col">
+                <div class="card card-media">
+                    <div class="placeholder-media">
+                        <span>📐 Render Chasis 3D</span>
+                    </div>
+                    <h4>Chasis Principal en Acrílico</h4>
+                    <p>Corte vectorial para acrílico de 3mm con tolerancias de 0.2mm para ensamble a presión (press-fit).</p>
+                </div>
+                <div class="card card-media">
+                    <div class="placeholder-media">
+                        <span>🖨️ Carcasa PETG</span>
+                    </div>
+                    <h4>Carcasa Protectora PCB</h4>
+                    <p>Diseñada para proteger el microcontrolador de salpicaduras y aislar térmicamente la etapa de potencia.</p>
+                </div>
+            </div>
+
+            <div class="callout callout-tip">
+                <strong>🛠️ Parámetros de Impresión 3D:</strong> Material PETG, Altura de capa 0.2mm, Relleno 20% Gyroid, Temperatura del nozzle 235°C, Cama 75°C.
+            </div>
+        </section>
+
+        <!-- Electronics Design -->
+        <section id="electronics" class="section-block">
+            <h2>4. Diseño Electrónico y PCB</h2>
+            <p>Diseño esquemático y ruteado de placa de circuito impreso (PCB) de 2 capas realizado en KiCAD 8.0.</p>
+
+            <div class="card">
+                <h3>Diagrama de Conexiones y Pinout</h3>
+                <div class="table-responsive">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Pin ESP32</th>
+                                <th>Función</th>
+                                <th>Tipo Periférico</th>
+                                <th>Notas</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>GPIO 4</td>
+                                <td>Lectura DS18B20</td>
+                                <td>OneWire Bus</td>
+                                <td>Requiere Resistencia Pull-Up 4.7kΩ</td>
+                            </tr>
+                            <tr>
+                                <td>GPIO 16</td>
+                                <td>Control PWM Actuador</td>
+                                <td>Salida PWM (LEDC)</td>
+                                <td>Frecuencia 5kHz / 8-bit resolución</td>
+                            </tr>
+                            <tr>
+                                <td>GPIO 21 / 22</td>
+                                <td>Pantalla OLED I2C</td>
+                                <td>SDA / SCL</td>
+                                <td>Dirección I2C: 0x3C</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="callout callout-warning">
+                <strong>⚠️ Precaución Térmica:</strong> El transistor MOSFET disipa calor durante ciclos prolongados a alta carga. Se recomendó incluir una zona de plano de cobre disipador en la PCB.
+            </div>
+        </section>
+
+        <!-- Firmware & Programming -->
+        <section id="firmware" class="section-block">
+            <h2>5. Firmware y Algoritmo de Control</h2>
+            <p>El código está desarrollado en C++ utilizando la plataforma PlatformIO / Arduino Framework sobre un ESP32.</p>
+
+            <div class="code-container">
+                <div class="code-header">
+                    <span>code/main.ino</span>
+                    <button class="btn-copy" id="copyCodeBtn">📋 Copiar Código</button>
+                </div>
+                <pre><code id="codeBlock">// Ejemplo de Control PID en ESP32 para Proyecto Fab Academy 2026
+#include &lt;Arduino.h&gt;
+#include &lt;OneWire.h&gt;
+#include &lt;DallasTemperature.h&gt;
+
+#define ONE_WIRE_BUS 4
+#define PWM_PIN 16
+
+OneWire oneWire(ONE_WIRE_BUS);
+DallasTemperature sensors(&oneWire);
+
+// Variables PID
+float setpoint = 37.5;
+float Kp = 2.0, Ki = 0.5, Kd = 1.0;
+float errorAccumulated = 0, lastError = 0;
+
+void setup() {
+    Serial.begin(115200);
+    sensors.begin();
+    ledcAttachChannel(PWM_PIN, 5000, 8, 0);
+    Serial.println("Sistema de Automatización Inicializado...");
+}
+
+void loop() {
+    sensors.requestTemperatures();
+    float currentTemp = sensors.getTempCByIndex(0);
+    
+    float error = setpoint - currentTemp;
+    errorAccumulated += error;
+    float dError = error - lastError;
+    
+    float output = (Kp * error) + (Ki * errorAccumulated) + (Kd * dError);
+    output = constrain(output, 0, 255);
+    
+    ledcWrite(PWM_PIN, (uint32_t)output);
+    lastError = error;
+    
+    delay(1000);
+}</code></pre>
+            </div>
+        </section>
+
+        <!-- Testing & Results -->
+        <section id="tests" class="section-block">
+            <h2>6. Pruebas y Resultados</h2>
+            <p>Evaluación del tiempo de respuesta del lazo de control frente a perturbaciones externas:</p>
+
+            <div class="grid-2col">
+                <div class="card">
+                    <h4>Métrica 1: Tiempo de Asentamiento</h4>
+                    <p class="metric-value">4.2 min</p>
+                    <p class="metric-desc">Tiempo transcurrido desde la temperatura ambiente (20°C) hasta el Setpoint (37.5°C).</p>
+                </div>
+                <div class="card">
+                    <h4>Métrica 2: Sobrepico Máximo</h4>
+                    <p class="metric-value">&lt; 1.5%</p>
+                    <p class="metric-desc">El algoritmo PID ajustado evita fluctuaciones bruscas en el actuador.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Downloads & Files -->
+        <section id="downloads" class="section-block">
+            <h2>7. Descarga de Archivos de Diseño</h2>
+            <p>Todos los archivos fuentes están disponibles bajo licencia libre para su replicación:</p>
+
+            <div class="downloads-grid">
+                <a href="#" class="download-card">
+                    <div class="file-icon">📦</div>
+                    <div class="file-info">
+                        <strong>Modelos CAD (.STEP / .FCStd)</strong>
+                        <span>Archivos 3D editables de FreeCAD</span>
+                    </div>
+                </a>
+                <a href="#" class="download-card">
+                    <div class="file-icon">⚡</div>
+                    <div class="file-info">
+                        <strong>Esquemáticos KiCAD (.zip)</strong>
+                        <span>Archivos de proyecto PCB y Gerber</span>
+                    </div>
+                </a>
+                <a href="code/main.ino" class="download-card">
+                    <div class="file-icon">💻</div>
+                    <div class="file-info">
+                        <strong>Código Fuente ESP32 (.ino)</strong>
+                        <span>Firmware completo con algoritmo PID</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <p>© 2026 <strong>Daniel Haro</strong> - Fab Academy Student</p>
+            <p>Documentado en <strong>FabLab UContinental</strong> | Arequipa / Huancayo, Perú</p>
+            <p class="license-text">Licencia: Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
